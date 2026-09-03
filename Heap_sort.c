@@ -6,10 +6,10 @@ void heapify(int a[], int n, int i)
     int l = 2 * i + 1;
     int r = 2 * i + 2;
 
-    if (l < n && a[l] > a[largest])
+    if (l < n && a[l] > a[largest]) // left
         largest = l;
 
-    if (r < n && a[r] > a[largest])
+    if (r < n && a[r] > a[largest])  // right
         largest = r;
 
     if (largest != i)
@@ -25,10 +25,11 @@ void heapify(int a[], int n, int i)
 void heapSort(int a[], int n)
 {
     int i, temp;
-
+// building maxheap
     for (i = n / 2 - 1; i >= 0; i--)
         heapify(a, n, i);
 
+//  deleting root
     for (i = n - 1; i > 0; i--)
     {
         temp = a[0];
